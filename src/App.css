@@ -1,0 +1,141 @@
+.App {
+  justify-content: center;
+  text-align: center;
+  align-content: center;
+
+}
+
+
+
+.App-header {
+  display: inline-flex;
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+
+.app-name {
+  font-family: 'Karla';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 31.25px;
+  line-height: 37px;
+  text-align: center;
+
+  color: #293264;
+}
+
+.app-description {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+
+  color: #293264;
+}
+
+.start-btn {
+  width: 193px;
+  height: 52px;
+  background: #243179;
+  border-radius: 15px;
+  color: rgb(255, 248, 248);
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+}
+
+.start-btn:hover {
+  background: #4D5B9E;
+  font-size: 17px;
+  width: 195px;
+}
+
+.question {
+  display: block;
+  margin-bottom: 2em;
+}
+
+.question-answers {
+  display: inline-flex;
+}
+
+.question-text {
+  font-family: 'Karla';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  /* identical to box height */
+  color: #293264;
+}
+
+.question-answer{
+  margin-right: 3%;
+  height: 2.2em;
+  min-width: 7em;
+  border: 0.8px solid #4D5B9E;
+  border-radius: 7.94239px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  line-height: 12px;
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: #293264;
+  
+}
+
+.question-answer:hover{
+  background-color: #0d0346;
+  transform: scale(1.17);
+  color: whitesmoke;
+}
+
+.check-btn{
+  background: #4D5B9E;
+  border-radius: 10px;
+  color: white;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600px;
+  line-height: 12px;
+  text-align: center;
+  margin-top: 7em;
+  margin-bottom: 7em;
+  height: 3em;
+  width: 10em;
+  }
+
+.check-btn:hover{
+  transform: scale(1.11);
+  background-color: green;
+}
+
+.quiz-page{
+    padding: 10em;
+  }
+
+.page-title{
+  font-family: 'Karla';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 31.25px;
+  line-height: 37px;
+  text-align: center;
+  margin-bottom: 3em;
+  color: #293264;
+}
+
+.space-line{
+  border: 0.794239px solid #DBDEF0;
+}
