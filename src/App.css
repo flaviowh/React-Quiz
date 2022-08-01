@@ -78,7 +78,7 @@
   color: #293264;
 }
 
-.question-answer{
+.question-answer {
   margin-right: 3%;
   height: 2.2em;
   min-width: 7em;
@@ -92,16 +92,16 @@
   width: 100%;
   text-align: center;
   color: #293264;
-  
+
 }
 
-.question-answer:hover{
+.question-answer:hover {
   background-color: #0d0346;
   transform: scale(1.17);
   color: whitesmoke;
 }
 
-.check-btn{
+.check-btn {
   background: #4D5B9E;
   border-radius: 10px;
   color: white;
@@ -110,32 +110,32 @@
   font-weight: 600px;
   line-height: 12px;
   text-align: center;
-  margin-top: 7em;
-  margin-bottom: 7em;
+  margin-top: 3em;
+  margin-bottom: 2em;
   height: 3em;
   width: 10em;
-  }
+}
 
-.check-btn:hover{
+.check-btn:hover {
   transform: scale(1.11);
   background-color: green;
 }
 
-.quiz-page{
-    padding: 10em;
-  }
+.quiz-page {
+  padding: 10em;
+}
 
-.page-title{
+.page-title {
   font-family: 'Karla';
   font-style: normal;
   font-weight: 700;
   font-size: 31.25px;
   line-height: 37px;
   text-align: center;
-  margin-bottom: 3em;
+  margin-bottom: 2em;
   color: #293264;
 }
 
-.space-line{
+.space-line {
   border: 0.794239px solid #DBDEF0;
 }

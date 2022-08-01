@@ -1,6 +1,6 @@
 import './App.css';
 import React from "react"
-import Questions from './Questions.js';
+import Questions from './Quiz.js';
 import { nanoid } from 'nanoid'
 
 
@@ -16,8 +16,6 @@ export default function App() {
       .then(data => setQuestions(formatData(data.results)))
   }, [])
 
-  const seedata = () => console.log(questions)
-
   function formatData(data) {
 
     function formatAnswers(answers) {
@@ -27,17 +25,19 @@ export default function App() {
       )
     }
 
-    return data.map(entry => (
-      {
+    return data.map(entry => { 
+      entry["random_seed"] = Math.random()
+      return ({
         ...entry,
         id: nanoid(),
         question: removeHTML(entry.question),
         correct_answer: removeHTML(entry.correct_answer),
-        incorrect_answers: formatAnswers(entry.incorrect_answers)
-      }
+        incorrect_answers: formatAnswers(entry.incorrect_answers),
+      })
+    }
     )
-    )
-  }
+  }  
+  
 
   function removeHTML(str) {
     var tmp = document.createElement("DIV");
@@ -59,7 +59,7 @@ export default function App() {
 
   return (
     <div className="App">
-      {started ? <Questions questions={questions}/> : welcomeDiv()}
+      {started ? <Questions questions={questions} /> : welcomeDiv()}
     </div>
   );
 }
