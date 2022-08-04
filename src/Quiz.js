@@ -5,9 +5,8 @@ export default function Questions(props) {
 
     const [questions, setquestions] = React.useState(props.questions)
     const [answerSheet, setAnswerSheet] = React.useState(initialAnswers())
+    const [finished, setFinished] = React.useState(false)
 
-    // questions.map(qst =>
-    //     console.log(qst.correct_answer))
 
     function initialAnswers() {
         return questions.map(qst => (
@@ -62,11 +61,7 @@ export default function Questions(props) {
     function QuestionDiv(props) {
 
         const answerButtons = [props.answers.map(ans => {
-            const colors = answerSheet.some(entry =>
-                entry.answer === ans && entry.id === props.id) ?
-                ['#293264', "white"]
-                : ["white", "#293264"];
-
+            const colors = decideColors(ans)
             return (
                 <button key={nanoid()} selected={false}
                     onClick={e => handleSelection(e)}
@@ -75,6 +70,32 @@ export default function Questions(props) {
             )
         }
         )]
+
+
+        function decideColors(ans) {
+            const defaultColors = ["white", "#293264"]
+            if (finished) {
+                if (questions.some(entry =>
+                    entry.correct_answer === ans && entry.id === props.id)) {
+                    return ["#94D7A2", "#293264"]
+                }
+                else if (answerSheet.some(entry =>
+                    entry.answer === ans && entry.id === props.id)) {
+                    return ["#F8BCBC", "#293264"]
+                }
+                else {
+                    return defaultColors
+                }
+            }
+            else {
+                const colors = answerSheet.some(entry =>
+                    entry.answer === ans && entry.id === props.id) ?
+                    ['#293264', "white"]
+                    : defaultColors
+                return colors
+            }
+        }
+
 
         return (
             <div className="question" >
@@ -87,11 +108,29 @@ export default function Questions(props) {
         )
     }
 
+    function endGame() {
+        if (!answerSheet.some(entry => entry.answer === "") && !finished) {
+            setFinished(true);
+        }
+        else if(finished){
+            window.location.reload(false);
+        }
+    }
+
+    function scorePoints() {
+        let total = 0
+        for (let i = 0; i < 5; i++) {
+            answerSheet[i].answer === questions[i].correct_answer && total++
+        }
+        return `You scored ${total}/5 correct answers.`
+    }
+
     return (
         <div className='quizPage'>
             <h1 className='page-title'>React Quiz</h1>
             {questionsList}
-            <button className='check-btn'>Check Answers</button>
+            <button className='check-btn' onClick={endGame}>{!finished ? "Check Answers" : "Restart Game"}</button>
+            {finished && <h1 id="game-score"> {scorePoints()}</h1>}
         </div>
     )
 

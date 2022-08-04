@@ -6,7 +6,6 @@
 }
 
 
-
 .App-header {
   display: inline-flex;
   color: white;
@@ -92,7 +91,7 @@
   width: 100%;
   text-align: center;
   color: #293264;
-
+  transition: all 0.15s linear;
 }
 
 .question-answer:hover {
@@ -114,6 +113,7 @@
   margin-bottom: 2em;
   height: 3em;
   width: 10em;
+  transition: all 0.15s linear;
 }
 
 .check-btn:hover {
@@ -138,4 +138,15 @@
 
 .space-line {
   border: 0.794239px solid #DBDEF0;
+}
+
+#game-score {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 15px;
+  text-align: center;
+
+  color: #293264;
 }
