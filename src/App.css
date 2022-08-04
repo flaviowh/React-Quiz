@@ -150,3 +150,13 @@
 
   color: #293264;
 }
+
+#options-form{
+  margin: 2em 0em 3em  0em;
+}
+
+.selection-box{
+  margin-bottom: 0.5em;
+  display: inline-flex;
+}
+

@@ -119,10 +119,10 @@ export default function Questions(props) {
 
     function scorePoints() {
         let total = 0
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < questions.length; i++) {
             answerSheet[i].answer === questions[i].correct_answer && total++
         }
-        return `You scored ${total}/5 correct answers.`
+        return `You scored ${total}/${questions.length} correct answers.`
     }
 
     return (
