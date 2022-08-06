@@ -1,9 +1,10 @@
-:root{
-  --blue:#293264;
-  --mediumblue:#243179;
+:root {
+  --blue: #293264;
+  --mediumblue: #243179;
   --steelblue: #4D5B9E;
   --darkerblue: #0d0346;
 }
+
 
 .App {
   justify-content: center;
@@ -19,18 +20,6 @@
 
 .App-link {
   color: #61dafb;
-}
-
-
-.app-name {
-  font-family: 'Karla';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 37px;
-  text-align: center;
-
-  color: var(--blue);
 }
 
 .app-description {
@@ -157,11 +146,11 @@
   color: var(--blue);
 }
 
-#options-form{
-  margin: 2em 0em 3em  0em;
+#options-form {
+  margin: 2em 0em 3em 0em;
 }
 
-.selection-box{
+.selection-box {
   margin-bottom: 0.5em;
   display: inline-flex;
 }

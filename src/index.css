@@ -1,14 +1,21 @@
+:root {
+  --blue: #293264;
+  --mediumblue: #243179;
+  --steelblue: #4D5B9E;
+  --darkerblue: #0d0346;
+  --clr-gradient: linear-gradient(to bottom, #ffffff, rgb(246, 251, 255));
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Karla', 'Roboto', 'Oxygen',
+  font-family: -apple-system, BlinkMacSystemFont, 'Karla', 'Inter', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  height: 100vh;
+  height: auto;
   display: flex;
   justify-content: center;
   text-align: center;
   align-items: center;
-
 }
 
 #root code {
@@ -19,4 +26,9 @@ body {
 #root{
   padding-right: 3%;
   padding-left: 3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
 }

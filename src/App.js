@@ -25,16 +25,18 @@ export default function App() {
       .then(res => res.json())
       .then(data => setCategories(any => [...any, ...data.trivia_categories]))
   }, [])
-
+ 
 
   React.useEffect(() => {
     if(apiURL){
     fetch(apiURL)
       .then(res => res.json())
       .then(data => setQuestions(formatData(data.results)))
-      .then(setStarted(prevState => !prevState))
+      .then(
+        setStarted(prevState => !prevState))
     }
   }, [apiURL])
+
 
   function formatData(data) {
 
@@ -137,17 +139,17 @@ export default function App() {
 
   function startGame() {
     window.event.preventDefault()
-    let updatedURL = `https://opentdb.com/api.php?amount=${formData.num_questions}`
+    let baseURL = `https://opentdb.com/api.php?amount=${formData.num_questions}`
     const category = formData.category && formData.category !== "All" ? `&category=${formData.category}` : ''
     const difficulty = formData.difficulty && formData.difficulty !== "All" ? `&difficulty=${formData.difficulty}` : ''
-    updatedURL = updatedURL + category + difficulty
+    let updatedURL = baseURL + category + difficulty
     setURL(updatedURL)
-    setStarted(true)
+    setStarted(prevState => !prevState)
   }
 
   return (
     <div className="App">
-      {started ? <Questions questions={questions} /> : welcomeDiv()}
+      {started ? <Questions questions={questions}/> : welcomeDiv()}
     </div>
   );
 }

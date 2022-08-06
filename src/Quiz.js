@@ -27,6 +27,9 @@ export default function Questions(props) {
         ))
     }
 
+    // React.useEffect(() =>{
+    //     document.body.style.height = "auto"
+    //   }, [answerSheet])
 
     function mixAnswers(question, random_seed) {
         let array = [...question.incorrect_answers]
