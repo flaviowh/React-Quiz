@@ -1,10 +1,16 @@
+:root{
+  --blue:#293264;
+  --mediumblue:#243179;
+  --steelblue: #4D5B9E;
+  --darkerblue: #0d0346;
+}
+
 .App {
   justify-content: center;
   text-align: center;
   align-content: center;
-
+  font-size: large;
 }
-
 
 .App-header {
   display: inline-flex;
@@ -20,41 +26,41 @@
   font-family: 'Karla';
   font-style: normal;
   font-weight: 700;
-  font-size: 31.25px;
+  font-size: 36px;
   line-height: 37px;
   text-align: center;
 
-  color: #293264;
+  color: var(--blue);
 }
 
 .app-description {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 19px;
   text-align: center;
 
-  color: #293264;
+  color: var(--blue);
 }
 
 .start-btn {
   width: 193px;
   height: 52px;
-  background: #243179;
+  background: var(--mediumblue);
   border-radius: 15px;
   color: rgb(255, 248, 248);
   font-family: 'Inter';
   font-style: normal;
   font-weight: 800;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 19px;
   text-align: center;
 }
 
 .start-btn:hover {
-  background: #4D5B9E;
-  font-size: 17px;
+  background: var(--steelblue);
+  font-size: 19px;
   width: 195px;
 }
 
@@ -71,10 +77,10 @@
   font-family: 'Karla';
   font-style: normal;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 19px;
   /* identical to box height */
-  color: #293264;
+  color: var(--blue);
 }
 
 .question-answer {
@@ -90,18 +96,18 @@
   display: block;
   width: 100%;
   text-align: center;
-  color: #293264;
+  color: var(--blue);
   transition: all 0.15s linear;
 }
 
 .question-answer:hover {
-  background-color: #0d0346;
+  background-color: var(--darkerblue);
   transform: scale(1.17);
   color: whitesmoke;
 }
 
 .check-btn {
-  background: #4D5B9E;
+  background: var(--darkerblue);
   border-radius: 10px;
   color: white;
   font-family: 'Inter';
@@ -129,11 +135,11 @@
   font-family: 'Karla';
   font-style: normal;
   font-weight: 700;
-  font-size: 31.25px;
+  font-size: 36px;
   line-height: 37px;
   text-align: center;
   margin-bottom: 2em;
-  color: #293264;
+  color: var(--blue);
 }
 
 .space-line {
@@ -148,7 +154,7 @@
   line-height: 15px;
   text-align: center;
 
-  color: #293264;
+  color: var(--blue);
 }
 
 #options-form{

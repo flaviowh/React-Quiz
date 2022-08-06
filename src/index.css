@@ -12,6 +12,11 @@ body {
 }
 
 #root code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: "Inter", Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+#root{
+  padding-right: 3%;
+  padding-left: 3%;
 }

@@ -33,7 +33,6 @@ export default function App() {
       .then(res => res.json())
       .then(data => setQuestions(formatData(data.results)))
       .then(setStarted(prevState => !prevState))
-      console.log("api consulted")
     }
   }, [apiURL])
 
@@ -128,7 +127,7 @@ export default function App() {
   function welcomeDiv() {
     return (
       <div className='welcome'>
-        <h1 className='app-name'>React Quiz</h1>
+        <h1 className='page-title'>React Quiz</h1>
         <h3 className='app-description'>Can you answer these questions?</h3>
         <OptionsForm />
         <button className='start-btn' onClick={startGame} >Start Quiz</button>
