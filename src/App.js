@@ -25,17 +25,21 @@ export default function App() {
       .then(res => res.json())
       .then(data => setCategories(any => [...any, ...data.trivia_categories]))
   }, [])
- 
+
 
   React.useEffect(() => {
-    if(apiURL){
-    fetch(apiURL)
-      .then(res => res.json())
-      .then(data => setQuestions(formatData(data.results)))
-      .then(
-        setStarted(prevState => !prevState))
+    if (apiURL) {
+      fetch(apiURL)
+        .then(res => res.json())
+        .then(data => setQuestions(formatData(data.results)))
     }
   }, [apiURL])
+
+  React.useEffect(() => {
+    if (questions.length >= 5) {
+      setStarted(prevState => !prevState)
+    }
+  }, [questions])
 
 
   function formatData(data) {
@@ -58,6 +62,12 @@ export default function App() {
       })
     }
     )
+  }
+
+  function removeHTML(str) {
+    var tmp = document.createElement("DIV");
+    tmp.innerHTML = str;
+    return tmp.textContent || tmp.innerText || "";
   }
 
   function handleChange(event) {
@@ -96,7 +106,7 @@ export default function App() {
           name="num_questions"
           className='selection-box'
         >
-          {["5","6","7","8","9","10"].map(num =>
+          {["5", "6", "7", "8", "9", "10"].map(num =>
             <option key={nanoid()} value={num}>{num}</option>)}
         </select>
         <br />
@@ -118,13 +128,6 @@ export default function App() {
     )
   }
 
-  function removeHTML(str) {
-    var tmp = document.createElement("DIV");
-    tmp.innerHTML = str;
-    return tmp.textContent || tmp.innerText || "";
-  }
-
-
 
   function welcomeDiv() {
     return (
@@ -144,12 +147,11 @@ export default function App() {
     const difficulty = formData.difficulty && formData.difficulty !== "All" ? `&difficulty=${formData.difficulty}` : ''
     let updatedURL = baseURL + category + difficulty
     setURL(updatedURL)
-    setStarted(prevState => !prevState)
   }
 
   return (
     <div className="App">
-      {started ? <Questions questions={questions}/> : welcomeDiv()}
+      {started ? <Questions questions={questions} /> : welcomeDiv()}
     </div>
   );
 }

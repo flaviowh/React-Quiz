@@ -115,7 +115,7 @@ export default function Questions(props) {
         if (!answerSheet.some(entry => entry.answer === "") && !finished) {
             setFinished(true);
         }
-        else if(finished){
+        else if (finished) {
             window.location.reload(false);
         }
     }
