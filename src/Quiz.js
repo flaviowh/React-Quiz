@@ -27,10 +27,6 @@ export default function Questions(props) {
         ))
     }
 
-    // React.useEffect(() =>{
-    //     document.body.style.height = "auto"
-    //   }, [answerSheet])
-
     function mixAnswers(question, random_seed) {
         let array = [...question.incorrect_answers]
         array.push(question.correct_answer)
@@ -76,15 +72,15 @@ export default function Questions(props) {
 
 
         function decideColors(ans) {
-            const defaultColors = ["white", "#293264"]
+            const defaultColors = ["white", "#000000"]
             if (finished) {
                 if (questions.some(entry =>
                     entry.correct_answer === ans && entry.id === props.id)) {
-                    return ["#94D7A2", "#293264"]
+                    return ["#94D7A2", "#000000"]
                 }
                 else if (answerSheet.some(entry =>
                     entry.answer === ans && entry.id === props.id)) {
-                    return ["#F8BCBC", "#293264"]
+                    return ["#F8BCBC", "#000000"]
                 }
                 else {
                     return defaultColors
@@ -93,7 +89,7 @@ export default function Questions(props) {
             else {
                 const colors = answerSheet.some(entry =>
                     entry.answer === ans && entry.id === props.id) ?
-                    ['#293264', "white"]
+                    ['#350c5c', "white"]
                     : defaultColors
                 return colors
             }
@@ -132,8 +128,8 @@ export default function Questions(props) {
         <div className='quizPage'>
             <h1 className='page-title'>React Quiz</h1>
             {questionsList}
-            <button className='check-btn' onClick={endGame}>{!finished ? "Check Answers" : "Restart Game"}</button>
             {finished && <h1 id="game-score"> {scorePoints()}</h1>}
+            <button className='check-btn' onClick={endGame}>{!finished ? "Check Answers" : "Restart Game"}</button>
         </div>
     )
 

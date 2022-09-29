@@ -3,16 +3,18 @@
   --mediumblue: #243179;
   --steelblue: #4D5B9E;
   --darkerblue: #0d0346;
-  --clr-gradient: linear-gradient(to bottom, #ffffff, rgb(246, 251, 255));
+  --clr-gradient: linear-gradient(to bottom, #38596e, rgb(85, 138, 173));
 }
 
 body {
-  margin: 0;
+
   font-family: -apple-system, BlinkMacSystemFont, 'Karla', 'Inter', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   height: auto;
-  display: flex;
+  background-image: var(--clr-gradient);
+  display:inline-block;
+  width: 100%;
   justify-content: center;
   text-align: center;
   align-items: center;
@@ -24,11 +26,19 @@ body {
 }
 
 #root{
-  padding-right: 3%;
-  padding-left: 3%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   min-height: 100vh;
+}
+
+.center{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
